@@ -38,7 +38,7 @@ public class WarpCommand implements CommandExecutor {
         }
         String markerID = args[0];
         if (sender instanceof Player) {
-            if (sender.hasPermission("dynwarp.tp") || sender.hasPermission("dynwarp." + markerID)) {
+            if (sender.hasPermission("dynwarp.tp") || sender.hasPermission("dynwarp.tp." + markerID)) {
                 Marker dm = null;
                 for (MarkerSet ms : markerAPI.getMarkerSets()) {
                     // first loop to get exact match

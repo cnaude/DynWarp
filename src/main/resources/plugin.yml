@@ -6,17 +6,17 @@ main: com.cnaude.dynwarp.DynWarp
 depends: dynmap
 commands:
     dwlist:
-        description: List DynMap marker warps.
+        description: List Dynmap marker warps.
         usage: /<command>
         aliases: [ dwl ]
     dwarp:
-        description: Warp to a DynMap marker.
+        description: Warp to a Dynmap marker.
         usage: /<command> [marker]
         aliases: [ dw ]
 permissions: 
     dynwarp.tp:
-        description: Gives player access to /dwarp.
+        description: Gives player access to /dwarp and /dw.
         default: op 
     dynwarp.list:
-        description: Gives player access to /dwlist.
+        description: Gives player access to /dwlist and /dwl.
         default: op 
