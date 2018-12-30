@@ -32,7 +32,7 @@ public class ListCommand implements CommandExecutor {
             return true;
         }
         if (sender instanceof Player) {
-            if (!sender.hasPermission("dynwarp.mutelist")) {
+            if (!sender.hasPermission("dynwarp.list")) {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
                 return true;
             }
