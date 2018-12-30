@@ -1,0 +1,22 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: Chris Naude
+main: com.cnaude.dynwarp.DynWarp
+depends: dynmap
+commands:
+    dwlist:
+        description: List DynMap marker warps.
+        usage: /<command>
+        aliases: [ dwl ]
+    dwarp:
+        description: Warp to a DynMap marker.
+        usage: /<command> [marker]
+        aliases: [ dw ]
+permissions: 
+    dynwarp.tp:
+        description: Gives player access to /dwarp.
+        default: op 
+    dynwarp.list:
+        description: Gives player access to /dwlist.
+        default: op 
