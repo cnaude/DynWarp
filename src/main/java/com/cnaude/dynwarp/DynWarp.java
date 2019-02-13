@@ -18,6 +18,7 @@ public class DynWarp extends JavaPlugin {
     @Override
     public void onEnable() {
         getCommand("dwarp").setExecutor(new WarpCommand(this));
+        getCommand("dwarp").setTabCompleter(new WarpAutoComplete(this));
         getCommand("dwlist").setExecutor(new ListCommand(this));
     }
 
