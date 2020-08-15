@@ -6,7 +6,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Bukkit API Version, change if out dated -->
-        <bukkit.version>1.13.2</bukkit.version>
+        <spigotmc.version>1.16.2-R0.1-SNAPSHOT</spigotmc.version>
+        <dynmapapi.version>3.1-SNAPSHOT</dynmapapi.version>
         <build.number>SNAPSHOT</build.number>
     </properties>
 
@@ -14,7 +15,7 @@
     <artifactId>DynWarp</artifactId>
     <version>0.1-${build.number}</version>
     <name>DynWarp</name>
-    <description>Allow players to warp to Dynmap Markers.</description>
+    <description>Allow players to warp to Dynmap markers.</description>
 
     <repositories>
         <repository>
@@ -28,13 +29,13 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository> 
-        
-        <repository>
-            <id>cnaude-repo</id>
-            <url>http://repo.chrisnaude.com/</url>
         </repository>
 
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        
         <repository>
             <id>dynmap</id>
             <url>http://repo.mikeprimm.com/</url>
@@ -44,9 +45,9 @@
     
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
+            <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>${bukkit.version}</version>
+            <version>${spigotmc.version}</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
@@ -55,7 +56,7 @@
         <dependency>
             <groupId>us.dynmap</groupId>
             <artifactId>dynmap-api</artifactId>
-            <version>2.5</version>
+            <version>${dynmapapi.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.bukkit</groupId>
