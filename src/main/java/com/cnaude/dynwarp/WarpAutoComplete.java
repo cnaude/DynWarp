@@ -24,7 +24,7 @@ public class WarpAutoComplete implements TabCompleter {
 	
 	@Override
 	public List<String> onTabComplete(final CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		List<String> markers = new ArrayList<String>(); 
+		List<String> markers = new ArrayList<>(); 
 		for (MarkerSet ms : markerAPI.getMarkerSets()) {
             for (Marker m : ms.getMarkers()) {
                 markers.add(m.getMarkerID());

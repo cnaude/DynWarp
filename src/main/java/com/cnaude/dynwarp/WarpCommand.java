@@ -38,6 +38,24 @@ public class WarpCommand implements CommandExecutor {
         }
         String markerID = args[0];
         if (sender instanceof Player) {
+            float yaw = ((Player) sender).getLocation().getYaw();
+            float pitch = ((Player) sender).getLocation().getPitch();
+            if (args.length >= 2) {
+                switch (args[1].toLowerCase().charAt(0)) {
+                    case 's':                    
+                        yaw = (float) 0.0;
+                        break;
+                    case 'w':
+                        yaw = (float) 90.0;
+                        break;
+                    case 'n':
+                        yaw = (float) 180.0;
+                        break;
+                    case 'e':
+                        yaw = (float) 270.0;
+                }
+            }
+
             if (sender.hasPermission("dynwarp.tp") || sender.hasPermission("dynwarp.tp." + markerID)) {
                 Marker dm = null;
                 for (MarkerSet ms : markerAPI.getMarkerSets()) {
@@ -58,7 +76,7 @@ public class WarpCommand implements CommandExecutor {
                 }
                 if (dm != null) {
                     sender.sendMessage(ChatColor.GOLD + "Warping to " + ChatColor.AQUA + dm.getMarkerID() + ": " + ChatColor.WHITE + dm.getLabel());
-                    Location loc = new Location(Bukkit.getWorld(dm.getWorld()), dm.getX(), dm.getY(), dm.getZ());
+                    Location loc = new Location(Bukkit.getWorld(dm.getWorld()), dm.getX(), dm.getY(), dm.getZ(), yaw, pitch);
                     ((Player) sender).teleport(loc);
                     return true;
                 } else {
